@@ -643,6 +643,7 @@ section { padding: 88px 0; }
 .gallery {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  align-items: start;
   gap: 18px;
 }
 
