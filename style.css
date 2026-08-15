@@ -526,6 +526,15 @@ section { padding: 88px 0; }
   color: var(--ink);
 }
 
+.gallery__item figcaption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--paper);
+  padding: 10px 18px;
+  font-size: 0.95rem;
+}
+
 .quote-mark {
   font-family: var(--font-display);
   font-size: 1.6rem;
@@ -620,8 +629,14 @@ section { padding: 88px 0; }
 .gallery__item { transition: transform 0.4s var(--ease); }
 .gallery__item:hover { transform: translateY(-6px); }
 
-.gallery__item svg { transition: opacity 0.4s var(--ease); opacity: 0.75; }
-.gallery__item:hover svg { opacity: 1; }
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  filter: grayscale(55%) contrast(0.96) brightness(0.98);
+  transition: filter 0.5s var(--ease);
+}
+.gallery__item:hover img { filter: grayscale(0%) contrast(1) brightness(1); }
 
 .gallery__item .art-block::before,
 .gallery__item .art-block::after { border-color: var(--sage); }
