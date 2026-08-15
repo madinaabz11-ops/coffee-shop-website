@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
@@ -37,9 +37,10 @@
 
       <nav class="nav" aria-label="Основная навигация">
         <a href="#about" data-nav="about"><span class="nav__num">01</span>О месте</a>
-        <a href="#menu" data-nav="menu"><span class="nav__num">02</span>Меню</a>
-        <a href="#atmosphere" data-nav="atmosphere"><span class="nav__num">03</span>Атмосфера</a>
-        <a href="#visit" data-nav="visit"><span class="nav__num">04</span>Адрес</a>
+        <a href="#team" data-nav="team"><span class="nav__num">02</span>Команда</a>
+        <a href="#menu" data-nav="menu"><span class="nav__num">03</span>Меню</a>
+        <a href="#atmosphere" data-nav="atmosphere"><span class="nav__num">04</span>Атмосфера</a>
+        <a href="#visit" data-nav="visit"><span class="nav__num">05</span>Адрес</a>
       </nav>
     </div>
   </header>
@@ -183,11 +184,47 @@
       </div>
     </section>
 
+    <!-- TEAM -->
+    <section id="team" class="team">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal>02 - Команда</p>
+          <h2 class="h2" data-reveal>Кто варит вам кофе</h2>
+        </div>
+
+        <div class="team__grid">
+          <div class="team__member" data-reveal>
+            <div class="team__portrait">
+              <span class="team__initial">Н</span>
+              <svg class="team__sprig" viewBox="0 0 40 20" fill="none" aria-hidden="true">
+                <path d="M20 19V3M20 7l-8 5M20 7l8 5M20 12l-6 4M20 12l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Настя</h3>
+            <p class="team__role">Обжарщица</p>
+            <p class="team__note">Приходит в пять утра - пока город ещё спит, а зерно уже пахнет корицей.</p>
+          </div>
+
+          <div class="team__member" data-reveal data-reveal-delay="1">
+            <div class="team__portrait">
+              <span class="team__initial">Т</span>
+              <svg class="team__sprig" viewBox="0 0 40 20" fill="none" aria-hidden="true">
+                <path d="M20 19V3M20 7l-8 5M20 7l8 5M20 12l-6 4M20 12l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Тимур</h3>
+            <p class="team__role">Шеф-бариста</p>
+            <p class="team__note">Помнит заказ каждого постоянного гостя - и то, с каким сиропом он больше не хочет ошибаться.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MENU -->
     <section id="menu" class="menu-section">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow" data-reveal>02 - Меню</p>
+          <p class="eyebrow" data-reveal>03 - Меню</p>
           <h2 class="h2" data-reveal>Что мы завариваем</h2>
         </div>
 
@@ -233,6 +270,25 @@
           </div>
 
         </div>
+
+        <div class="testimonials">
+          <p class="testimonials__label handwritten">Что говорят гости</p>
+          <div class="testimonials__row">
+            <blockquote class="testimonials__item" data-reveal>
+              <p><span class="quote-mark" aria-hidden="true">&laquo;</span>Лучший V60 в городе, и наконец место, где можно почитать в тишине<span class="quote-mark quote-mark--close" aria-hidden="true">&raquo;</span></p>
+              <cite>- Лена</cite>
+            </blockquote>
+            <blockquote class="testimonials__item" data-reveal data-reveal-delay="1">
+              <p><span class="quote-mark" aria-hidden="true">&laquo;</span>Прихожу ради булочки с кленовым сиропом и остаюсь на два часа<span class="quote-mark quote-mark--close" aria-hidden="true">&raquo;</span></p>
+              <cite>- Игорь</cite>
+            </blockquote>
+            <blockquote class="testimonials__item" data-reveal data-reveal-delay="2">
+              <p><span class="quote-mark" aria-hidden="true">&laquo;</span>Обжарка чувствуется даже с улицы. Заходишь на запах<span class="quote-mark quote-mark--close" aria-hidden="true">&raquo;</span></p>
+              <cite>- Соня</cite>
+            </blockquote>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -249,7 +305,7 @@
     <section id="atmosphere" class="atmosphere">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow eyebrow--moss" data-reveal>03 - Атмосфера</p>
+          <p class="eyebrow eyebrow--moss" data-reveal>04 - Атмосфера</p>
           <h2 class="h2" data-reveal>Место, где хочется остаться</h2>
         </div>
 
@@ -293,7 +349,7 @@
     <section id="visit" class="visit">
       <div class="wrap visit__grid">
         <div data-reveal>
-          <p class="eyebrow">04 - Как нас найти</p>
+          <p class="eyebrow">05 - Как нас найти</p>
           <h2 class="h2">Ждём вас</h2>
 
           <table class="hours">
@@ -348,6 +404,7 @@
 
       <nav class="footer__nav" aria-label="Навигация в подвале">
         <a href="#about">О месте</a>
+        <a href="#team">Команда</a>
         <a href="#menu">Меню</a>
         <a href="#atmosphere">Атмосфера</a>
         <a href="#visit">Адрес</a>

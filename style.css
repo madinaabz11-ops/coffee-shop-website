@@ -183,7 +183,7 @@ table { border-collapse: collapse; }
 
 .nav {
   display: flex;
-  gap: 40px;
+  gap: clamp(16px, 3vw, 40px);
 }
 
 .nav a {
@@ -195,6 +195,7 @@ table { border-collapse: collapse; }
   font-weight: 500;
   color: var(--ink-soft);
   padding: 6px 0;
+  white-space: nowrap;
   transition: color 0.3s var(--ease);
 }
 
@@ -564,6 +565,63 @@ section { padding: 88px 0; }
 }
 
 /* =========================================================
+   TEAM
+   ========================================================= */
+.team { border-bottom: 1px solid var(--line-soft); }
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 260px));
+  gap: 56px;
+}
+
+.team__portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 20px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg-deep);
+  color: var(--sage);
+}
+
+.team__initial {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--moss-deep);
+}
+
+.team__sprig { width: 24px; height: 12px; opacity: 0.7; }
+
+.team__member h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+.team__role {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 10px;
+}
+
+.team__note {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  max-width: 40ch;
+}
+
+/* =========================================================
    MENU
    ========================================================= */
 .menu-grid {
@@ -628,6 +686,45 @@ section { padding: 88px 0; }
   color: var(--rust-deep);
   margin-left: 8px;
   white-space: nowrap;
+}
+
+/* =========================================================
+   TESTIMONIALS (inside menu section)
+   ========================================================= */
+.testimonials {
+  margin-top: 64px;
+  padding-top: 44px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.testimonials__label {
+  margin-bottom: 24px;
+}
+
+.testimonials__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.testimonials__item {
+  border-left: 2px solid var(--line);
+  padding-left: 18px;
+}
+
+.testimonials__item p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.testimonials__item cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
 }
 
 /* =========================================================
@@ -815,6 +912,7 @@ section { padding: 88px 0; }
   .art-block--tall svg { aspect-ratio: 320 / 260; }
   .menu-grid { grid-template-columns: 1fr; gap: 0; }
   .visit__map { aspect-ratio: 400 / 240; }
+  .testimonials__row { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -850,6 +948,9 @@ section { padding: 88px 0; }
   .gallery__item--c, .gallery__item--d { grid-column: span 12; }
 
   .scroll-cue { display: none; }
+
+  .team__grid { grid-template-columns: 1fr; gap: 36px; }
+  .testimonials__row { grid-template-columns: 1fr; gap: 24px; }
 }
 
 /* =========================================================
