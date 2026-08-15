@@ -584,6 +584,7 @@ section { padding: 88px 0; }
   align-items: baseline;
   gap: 10px;
   padding: 13px 4px;
+  font-family: var(--font-display);
   border-bottom: 1px dashed var(--line);
   transition: background 0.25s var(--ease), padding-left 0.25s var(--ease);
 }
@@ -595,7 +596,9 @@ section { padding: 88px 0; }
 
 .menu-list__name {
   flex-shrink: 0;
+  font-size: 1.05rem;
   font-weight: 500;
+  letter-spacing: 0.003em;
 }
 
 .menu-list li::after {
@@ -608,6 +611,7 @@ section { padding: 88px 0; }
 
 .menu-list__price {
   flex-shrink: 0;
+  font-weight: 300;
   font-variant-numeric: tabular-nums;
   color: var(--ink-soft);
 }
