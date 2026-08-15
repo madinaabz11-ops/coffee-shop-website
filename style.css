@@ -314,6 +314,22 @@ table { border-collapse: collapse; }
   z-index: 0;
 }
 
+.hero__branch {
+  position: absolute;
+  right: 6%;
+  top: 4%;
+  width: 200px;
+  height: 92%;
+  color: var(--moss);
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .hero__branch { display: none; }
+}
+
 .hero__inner {
   position: relative;
   z-index: 1;
