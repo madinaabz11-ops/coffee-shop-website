@@ -8,7 +8,7 @@
   --paper:       #faf6ec;
   --ink:         #2a2319;
   --ink-soft:    #5b4f3e;
-  --ink-faint:   #8c8069;
+  --ink-faint:   #6f6552;
   --line:        #cdbd9c;
   --line-soft:   #ded1b3;
   --rust:        #b04f2c;
@@ -620,7 +620,7 @@ section { padding: 88px 0; }
   font-family: var(--font-hand);
   font-style: normal;
   font-size: 1.05rem;
-  color: var(--rust);
+  color: var(--rust-deep);
   margin-left: 8px;
   white-space: nowrap;
 }
@@ -768,9 +768,9 @@ section { padding: 88px 0; }
   background-position: 0 bottom;
 }
 
-.footer__inner { position: relative; z-index: 1; }
-
 .footer__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
