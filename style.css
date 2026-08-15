@@ -649,6 +649,8 @@ section { padding: 88px 0; }
 .gallery__item { transition: transform 0.4s var(--ease); }
 .gallery__item:hover { transform: translateY(-6px); }
 
+.gallery__item picture { display: block; width: 100%; }
+
 .gallery__item img {
   width: 100%;
   height: auto;
