@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — Spectrum</title>
+  <meta name="description" content="Личный кабинет Spectrum: избранные объявления для покупателей и управление объявлениями для продавцов.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M3 34A17 17 0 0 1 37 34' fill='none' stroke='%230f5c52' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M8 34A12 12 0 0 1 32 34' fill='none' stroke='%23d9a441' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M13 34A7 7 0 0 1 27 34' fill='none' stroke='%23e1693f' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Перейти к содержимому</a>
+
+  <header class="header" id="site-header">
+    <div class="wrap header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M3 34A17 17 0 0 1 37 34" stroke="#0f5c52" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M8 34A12 12 0 0 1 32 34" stroke="#d9a441" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M13 34A7 7 0 0 1 27 34" stroke="#e1693f" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <span class="brand__word">Spectrum</span>
+          <span class="brand__tag">недвижимость</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html#listings">Купить</a>
+        <a href="index.html#listings">Снять</a>
+        <a href="index.html#how">Как это работает</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="index.html" class="header__account">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5M6 10v9a1 1 0 0 0 1 1h3v-6h4v6h3a1 1 0 0 0 1-1v-9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>На главную</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="cabinet">
+      <div class="wrap">
+
+        <div class="cabinet__head" data-reveal>
+          <div>
+            <h1 class="hero__title" style="font-size: 32px; margin-bottom: 6px;">Личный кабинет</h1>
+            <p class="page-lede">Управляйте объявлениями и избранным в одном месте.</p>
+          </div>
+          <div class="role-switch" role="group" aria-label="Режим кабинета">
+            <button type="button" data-role="buyer" class="is-active">Покупатель</button>
+            <button type="button" data-role="seller">Продавец</button>
+          </div>
+        </div>
+
+        <div class="profile-card" data-reveal>
+          <div class="profile-card__avatar">АА</div>
+          <div class="profile-card__body">
+            <h2>Айгерим Ахметова</h2>
+            <div class="profile-card__meta">
+              <span><svg viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10.5 20 4 13.5 4 6a2 2 0 0 1 1-2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>+7 (701) 234-56-78</span>
+              <span><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>Алматы</span>
+              <span><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>aigerim@example.kz</span>
+            </div>
+            <span class="profile-card__role-tag profile-card__role-tag--buyer" id="role-tag">Режим покупателя</span>
+          </div>
+          <button type="button" class="btn btn--ghost btn--sm">Редактировать</button>
+        </div>
+
+        <!-- BUYER PANEL -->
+        <div class="cabinet-panel is-active" id="panel-buyer">
+          <div class="stat-row" data-reveal>
+            <div class="stat-tile"><strong id="fav-count">3</strong><span>в избранном</span></div>
+            <div class="stat-tile"><strong>27</strong><span>просмотрено объявлений</span></div>
+            <div class="stat-tile"><strong>2</strong><span>сохранённых поиска</span></div>
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-block__head">
+              <h3>Избранные объявления</h3>
+            </div>
+            <div class="listing-grid" id="favorites-grid">
+
+              <article class="card" data-city="almaty" data-deal="sale">
+                <div class="card__media">
+                  <span class="card__tag">Новостройка</span>
+                  <button type="button" class="card__fav is-active" aria-label="Убрать из избранного" data-fav="listing-1">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.7-9.3C.8 7.7 2.6 4 6.3 4c2.1 0 3.7 1.2 4.7 2.7C12 5.2 13.6 4 15.7 4c3.7 0 5.5 3.7 4 7.2-2.2 4.7-9.7 9.3-9.7 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  </button>
+                  <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=700&q=75" alt="3-комнатная квартира в новостройке, Алматы" width="700" height="525" loading="lazy">
+                </div>
+                <div class="card__body">
+                  <p class="card__price">54 900 000 ₸</p>
+                  <p class="card__title">3-комнатная квартира, 92 м²</p>
+                  <p class="card__loc">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                    Алматы, Бостандыкский р-н
+                  </p>
+                  <div class="card__meta">
+                    <span>3 комн.</span>
+                    <span>92 м²</span>
+                    <span>9/16 эт.</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-city="shymkent" data-deal="sale">
+                <div class="card__media">
+                  <span class="card__tag">Дом</span>
+                  <button type="button" class="card__fav is-active" aria-label="Убрать из избранного" data-fav="listing-3">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.7-9.3C.8 7.7 2.6 4 6.3 4c2.1 0 3.7 1.2 4.7 2.7C12 5.2 13.6 4 15.7 4c3.7 0 5.5 3.7 4 7.2-2.2 4.7-9.7 9.3-9.7 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  </button>
+                  <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=700&q=75" alt="Дом с участком, Шымкент" width="700" height="525" loading="lazy">
+                </div>
+                <div class="card__body">
+                  <p class="card__price">62 000 000 ₸</p>
+                  <p class="card__title">Дом, 180 м², участок 6 сот.</p>
+                  <p class="card__loc">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                    Шымкент, Абайский р-н
+                  </p>
+                  <div class="card__meta">
+                    <span>5 комн.</span>
+                    <span>180 м²</span>
+                    <span>2 этажа</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="card" data-city="karaganda" data-deal="rent">
+                <div class="card__media">
+                  <span class="card__tag card__tag--rent">Аренда</span>
+                  <button type="button" class="card__fav is-active" aria-label="Убрать из избранного" data-fav="listing-5">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.7-9.3C.8 7.7 2.6 4 6.3 4c2.1 0 3.7 1.2 4.7 2.7C12 5.2 13.6 4 15.7 4c3.7 0 5.5 3.7 4 7.2-2.2 4.7-9.7 9.3-9.7 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  </button>
+                  <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=700&q=75" alt="Квартира в аренду, Караганда" width="700" height="525" loading="lazy">
+                </div>
+                <div class="card__body">
+                  <p class="card__price">180 000 ₸ <span>/ мес</span></p>
+                  <p class="card__title">Квартира, 45 м²</p>
+                  <p class="card__loc">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                    Караганда, центр
+                  </p>
+                  <div class="card__meta">
+                    <span>2 комн.</span>
+                    <span>45 м²</span>
+                    <span>2/5 эт.</span>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+            <div class="empty-state" id="favorites-empty" hidden>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.7-9.3C.8 7.7 2.6 4 6.3 4c2.1 0 3.7 1.2 4.7 2.7C12 5.2 13.6 4 15.7 4c3.7 0 5.5 3.7 4 7.2-2.2 4.7-9.7 9.3-9.7 9.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              <p>Пока нет избранных объявлений. Нажмите на сердечко на карточке, чтобы сохранить её сюда.</p>
+            </div>
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-block__head">
+              <h3>Сохранённые фильтры</h3>
+            </div>
+            <div class="owned-list">
+              <div class="owned-row">
+                <div class="owned-row__media owned-row__media--placeholder">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="owned-row__body">
+                  <p class="owned-row__title">Алматы · Квартиры · до 45 000 000 ₸</p>
+                  <p class="owned-row__meta"><span>Обновляется ежедневно</span><span>18 новых объявлений</span></p>
+                </div>
+                <a href="index.html#listings" class="btn btn--ghost btn--sm">Смотреть</a>
+              </div>
+              <div class="owned-row">
+                <div class="owned-row__media owned-row__media--placeholder">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+                </div>
+                <div class="owned-row__body">
+                  <p class="owned-row__title">Астана · Аренда · 2 комнаты</p>
+                  <p class="owned-row__meta"><span>Обновляется ежедневно</span><span>6 новых объявлений</span></p>
+                </div>
+                <a href="index.html#listings" class="btn btn--ghost btn--sm">Смотреть</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SELLER PANEL -->
+        <div class="cabinet-panel" id="panel-seller">
+          <div class="stat-row" data-reveal>
+            <div class="stat-tile"><strong>3</strong><span>активных объявления</span></div>
+            <div class="stat-tile"><strong>512</strong><span>просмотров всего</span></div>
+            <div class="stat-tile"><strong>9</strong><span>в избранном у покупателей</span></div>
+          </div>
+
+          <div class="panel-block">
+            <div class="panel-block__head">
+              <h3>Мои объявления</h3>
+              <button type="button" class="btn btn--accent btn--sm" id="toggle-form">
+                <span>+ Добавить объявление</span>
+              </button>
+            </div>
+
+            <form class="form-card" id="listing-form" novalidate>
+              <div class="form-grid form-grid--3">
+                <div class="form-field">
+                  <label for="f-deal">Тип сделки</label>
+                  <select id="f-deal" name="deal" required>
+                    <option value="sale">Продажа</option>
+                    <option value="rent">Аренда</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="f-type">Тип недвижимости</label>
+                  <select id="f-type" name="type" required>
+                    <option value="apartment">Квартира</option>
+                    <option value="house">Дом</option>
+                    <option value="townhouse">Таунхаус</option>
+                    <option value="commercial">Коммерческая</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="f-city">Город (КЗ)</label>
+                  <select id="f-city" name="city" required>
+                    <option value="Алматы">Алматы</option>
+                    <option value="Астана">Астана</option>
+                    <option value="Шымкент">Шымкент</option>
+                    <option value="Караганда">Караганда</option>
+                    <option value="Актобе">Актобе</option>
+                    <option value="Тараз">Тараз</option>
+                    <option value="Павлодар">Павлодар</option>
+                    <option value="Атырау">Атырау</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label for="f-address">Адрес / район</label>
+                  <input type="text" id="f-address" name="address" placeholder="Например, Бостандыкский р-н, ул. Абая 12" required>
+                </div>
+              </div>
+
+              <div class="form-grid form-grid--3">
+                <div class="form-field">
+                  <label for="f-area">Площадь, м²</label>
+                  <input type="number" id="f-area" name="area" min="1" placeholder="65" required>
+                </div>
+                <div class="form-field">
+                  <label for="f-rooms">Комнат</label>
+                  <input type="number" id="f-rooms" name="rooms" min="0" placeholder="2" required>
+                </div>
+                <div class="form-field">
+                  <label for="f-floor">Этаж / этажность</label>
+                  <input type="text" id="f-floor" name="floor" placeholder="4/9">
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field form-field--price">
+                  <label for="f-price">Цена, ₸</label>
+                  <input type="text" id="f-price" name="price" inputmode="numeric" placeholder="35 000 000" required>
+                </div>
+                <div class="form-field">
+                  <label for="f-photo">Фото объявления</label>
+                  <div class="upload-drop">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 16V4m0 0-4 4m4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                    Перетащите фото сюда или нажмите, чтобы выбрать
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field form-field--full">
+                  <label for="f-desc">Описание</label>
+                  <textarea id="f-desc" name="description" placeholder="Расскажите об объекте: ремонт, инфраструктура, документы"></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn--ghost btn--sm" id="cancel-form">Отмена</button>
+                <button type="submit" class="btn btn--accent btn--sm">Опубликовать объявление</button>
+              </div>
+            </form>
+
+            <div class="owned-list" id="owned-list">
+
+              <div class="owned-row" data-listing>
+                <div class="owned-row__media">
+                  <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=200&q=70" alt="3-комнатная квартира, Алматы">
+                </div>
+                <div class="owned-row__body">
+                  <p class="owned-row__title">3-комнатная квартира, 92 м², Алматы</p>
+                  <p class="owned-row__meta"><span>Бостандыкский р-н</span><span>9/16 эт.</span><span>412 просмотров</span></p>
+                </div>
+                <p class="owned-row__price">54 900 000 ₸</p>
+                <span class="owned-row__status status--active">Активно</span>
+                <div class="owned-row__actions">
+                  <button type="button" class="icon-btn" aria-label="Редактировать">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="m16.5 3.5 4 4L8 20H4v-4L16.5 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="icon-btn icon-btn--danger" aria-label="Удалить" data-remove-listing>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M10 7V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2m-8 0 1 13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="owned-row" data-listing>
+                <div class="owned-row__media">
+                  <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=200&q=70" alt="2-комнатная квартира, Алматы">
+                </div>
+                <div class="owned-row__body">
+                  <p class="owned-row__title">2-комнатная квартира, 68 м², Алматы</p>
+                  <p class="owned-row__meta"><span>Медеуский р-н</span><span>3/9 эт.</span><span>87 просмотров</span></p>
+                </div>
+                <p class="owned-row__price">38 500 000 ₸</p>
+                <span class="owned-row__status status--pending">На модерации</span>
+                <div class="owned-row__actions">
+                  <button type="button" class="icon-btn" aria-label="Редактировать">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="m16.5 3.5 4 4L8 20H4v-4L16.5 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="icon-btn icon-btn--danger" aria-label="Удалить" data-remove-listing>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M10 7V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2m-8 0 1 13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="owned-row" data-listing>
+                <div class="owned-row__media">
+                  <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=200&q=70" alt="Таунхаус, Астана">
+                </div>
+                <div class="owned-row__body">
+                  <p class="owned-row__title">Таунхаус, 140 м², Астана</p>
+                  <p class="owned-row__meta"><span>р-н Алматы</span><span>3 этажа</span><span>13 просмотров</span></p>
+                </div>
+                <p class="owned-row__price">71 300 000 ₸</p>
+                <span class="owned-row__status status--sold">Продано</span>
+                <div class="owned-row__actions">
+                  <button type="button" class="icon-btn" aria-label="Редактировать">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="m16.5 3.5 4 4L8 20H4v-4L16.5 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                  </button>
+                  <button type="button" class="icon-btn icon-btn--danger" aria-label="Удалить" data-remove-listing>
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14M10 7V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2m-8 0 1 13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1l1-13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__bottom" style="border:none; padding-top: 0;">
+      <span>&copy; 2026 Spectrum. Цены указаны в тенге (₸). Казахстан.</span>
+      <span>hello@spectrum.kz</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span id="toast-text">Готово</span>
+  </div>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
