@@ -420,12 +420,12 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-md);
 }
 .hero__badge--price {
-  left: -28px;
-  bottom: 54px;
+  left: 20px;
+  bottom: 24px;
 }
 .hero__badge--cities {
-  right: -20px;
-  top: 40px;
+  right: 20px;
+  top: 24px;
 }
 .hero__badge-icon {
   width: 40px; height: 40px;
