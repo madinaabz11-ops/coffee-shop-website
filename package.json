@@ -1,0 +1,12 @@
+{
+  "name": "spectrum",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Spectrum real estate marketplace - static site",
+  "scripts": {
+    "start": "serve -l ${PORT:-3000} ."
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
