@@ -486,6 +486,7 @@ h1, h2, h3, h4 {
 }
 
 .card {
+  position: relative;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -495,6 +496,8 @@ h1, h2, h3, h4 {
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+
+.card__link { position: absolute; inset: 0; z-index: 1; }
 
 .card__media {
   position: relative;
@@ -524,6 +527,7 @@ h1, h2, h3, h4 {
 
 .card__fav {
   position: absolute;
+  z-index: 2;
   top: 12px; right: 12px;
   width: 36px; height: 36px;
   border-radius: 0;
@@ -801,6 +805,7 @@ h1, h2, h3, h4 {
 /* seller listing rows */
 .owned-list { display: flex; flex-direction: column; gap: 14px; }
 .owned-row {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -811,6 +816,7 @@ h1, h2, h3, h4 {
   transition: box-shadow 0.25s var(--ease), border-color 0.25s var(--ease);
 }
 .owned-row:hover { box-shadow: var(--shadow-sm); border-color: var(--line-soft); }
+.owned-row__link { position: absolute; inset: 0; z-index: 1; }
 .owned-row__media {
   width: 92px; height: 74px;
   border-radius: var(--radius-sm);
@@ -837,7 +843,7 @@ h1, h2, h3, h4 {
 .status--active { background: var(--primary-tint); color: var(--primary-deep); }
 .status--pending { background: var(--gold-tint); color: #8a6717; }
 .status--sold { background: var(--bg-soft); color: var(--ink-faint); }
-.owned-row__actions { display: flex; gap: 6px; flex-shrink: 0; }
+.owned-row__actions { position: relative; z-index: 2; display: flex; gap: 6px; flex-shrink: 0; }
 .icon-btn {
   width: 36px; height: 36px;
   border-radius: 0;
@@ -945,6 +951,69 @@ h1, h2, h3, h4 {
    Simple page header (cabinet)
    --------------------------------------------------------------- */
 .page-lede { color: var(--ink-soft); margin-top: 4px; }
+
+/* ---------------------------------------------------------------
+   Listing detail page
+   --------------------------------------------------------------- */
+.breadcrumb-row { padding: 28px 0 4px; }
+
+.listing-detail__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+.listing-detail__photo { position: relative; aspect-ratio: 4 / 3.2; }
+.listing-detail__photo--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-tint), var(--gold-tint));
+  color: var(--primary-deep);
+}
+.listing-detail__photo--placeholder::after {
+  content: "Фото скоро появится";
+  font-weight: 600;
+  font-size: 14px;
+}
+.listing-detail__photo .card__tag { position: absolute; top: 16px; left: 16px; }
+
+.listing-detail__price { font-family: var(--font-display); font-size: 30px; font-weight: 800; }
+.listing-detail__price span { font-size: 15px; font-weight: 600; color: var(--ink-faint); }
+.listing-detail__title { font-size: clamp(22px, 3vw, 28px); margin: 8px 0 14px; }
+.listing-detail__loc {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--ink-soft); font-size: 15px; margin-bottom: 22px;
+}
+.listing-detail__loc svg { width: 17px; height: 17px; flex-shrink: 0; }
+
+.listing-detail__meta {
+  display: flex; gap: 26px; flex-wrap: wrap;
+  margin-bottom: 26px; padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+.listing-detail__meta span { font-size: 14.5px; color: var(--ink-soft); font-weight: 600; }
+
+.listing-detail__actions { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+
+.listing-detail__contact {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 22px;
+}
+.listing-detail__contact h3 { font-size: 16px; margin-bottom: 6px; }
+.listing-detail__contact p { color: var(--ink-faint); font-size: 13.5px; margin-bottom: 16px; }
+.listing-detail__contact-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.listing-detail__phone-number { font-family: var(--font-display); font-weight: 700; font-size: 16px; color: var(--primary-deep); }
+
+.listing-detail__description { margin-bottom: 8px; }
+.listing-detail__description h2 { font-size: 20px; margin-bottom: 12px; }
+.listing-detail__description p { color: var(--ink-soft); max-width: 70ch; }
+
+@media (max-width: 860px) {
+  .listing-detail__grid { grid-template-columns: 1fr; gap: 28px; }
+}
 
 /* ---------------------------------------------------------------
    Responsive
