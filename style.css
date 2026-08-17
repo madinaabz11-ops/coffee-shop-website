@@ -1057,4 +1057,9 @@ h1, h2, h3, h4 {
   .profile-card { flex-direction: column; text-align: center; }
   .profile-card__meta { justify-content: center; }
   .owned-row { flex-wrap: wrap; }
+  .owned-row__body { flex-basis: 180px; }
+  .owned-row__actions { margin-left: auto; }
+  .header__actions .btn--accent { display: none; }
+  .form-actions { flex-direction: column-reverse; align-items: stretch; }
+  .cta-banner__actions { flex-wrap: wrap; }
 }
