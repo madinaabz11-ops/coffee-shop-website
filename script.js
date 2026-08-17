@@ -331,7 +331,7 @@
       </div>
       <div class="owned-row__body">
         <p class="owned-row__title">${escapeHtml(opts.title)}</p>
-        <p class="owned-row__meta"><span>${escapeHtml(opts.metaLeft)}</span><span>${escapeHtml(opts.metaMid || "—")}</span><span>${escapeHtml(opts.metaRight)}</span></p>
+        <p class="owned-row__meta"><span>${escapeHtml(opts.metaLeft)}</span><span>${escapeHtml(opts.metaMid || "-")}</span><span>${escapeHtml(opts.metaRight)}</span></p>
       </div>
       <p class="owned-row__price">${escapeHtml(opts.price)}</p>
       <span class="owned-row__status ${opts.statusClass}">${escapeHtml(opts.statusLabel)}</span>
@@ -368,9 +368,9 @@
         title,
         price: `${price} ₸`, priceSuffix,
         city: data.get("city"), district: data.get("address"),
-        rooms: data.get("rooms") ? `${data.get("rooms")} комн.` : "—",
+        rooms: data.get("rooms") ? `${data.get("rooms")} комн.` : "-",
         area: `${data.get("area")} м²`,
-        floor: data.get("floor") || "—",
+        floor: data.get("floor") || "-",
         image: null,
         description: data.get("description") || "Продавец пока не добавил описание объявления."
       };
@@ -430,7 +430,7 @@
       detailRoot.hidden = true;
       if (notFound) notFound.hidden = false;
     } else {
-      document.title = `${listing.title} — Spectrum`;
+      document.title = `${listing.title} - Spectrum`;
 
       const imageEl = document.getElementById("ld-image");
       const photoEl = document.getElementById("ld-photo");
