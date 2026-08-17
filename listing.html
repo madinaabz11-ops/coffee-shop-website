@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Объявление — Spectrum</title>
+  <meta name="description" content="Подробности объявления о недвижимости на Spectrum.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M3 34A17 17 0 0 1 37 34' fill='none' stroke='%230f5c52' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M8 34A12 12 0 0 1 32 34' fill='none' stroke='%23d9a441' stroke-width='4.5' stroke-linecap='round'/%3E%3Cpath d='M13 34A7 7 0 0 1 27 34' fill='none' stroke='%23e1693f' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Перейти к содержимому</a>
+
+  <header class="header" id="site-header">
+    <div class="wrap header__inner">
+      <a href="index.html" class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M3 34A17 17 0 0 1 37 34" stroke="#0f5c52" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M8 34A12 12 0 0 1 32 34" stroke="#d9a441" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M13 34A7 7 0 0 1 27 34" stroke="#e1693f" stroke-width="4.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>
+          <span class="brand__word">Spectrum</span>
+          <span class="brand__tag">недвижимость</span>
+        </span>
+      </a>
+
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="index.html#listings">Купить</a>
+        <a href="index.html#listings">Снять</a>
+        <a href="index.html#how">Как это работает</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="cabinet.html" class="header__account">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 20c1.6-3.6 4.6-5.5 8-5.5s6.4 1.9 8 5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.7"/></svg>
+          <span>Кабинет</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <div class="wrap breadcrumb-row">
+      <a href="index.html#listings" class="text-link" data-reveal>
+        <svg viewBox="0 0 20 10" class="btn__arrow" style="transform: rotate(180deg);" aria-hidden="true"><path d="M0 5H19M19 5L14 1M19 5L14 9" stroke="currentColor" stroke-width="1.4"/></svg>
+        <span>Ко всем объявлениям</span>
+      </a>
+    </div>
+
+    <section class="section section--tight">
+      <div class="wrap" id="listing-detail">
+
+        <div class="listing-detail__grid">
+          <figure class="hero__photo listing-detail__photo" id="ld-photo" data-reveal>
+            <img id="ld-image" src="" alt="">
+            <span class="card__tag" id="ld-tag"></span>
+          </figure>
+
+          <div data-reveal data-reveal-delay="1">
+            <p class="listing-detail__price"><span id="ld-price"></span><span id="ld-price-suffix"></span></p>
+            <h1 class="listing-detail__title" id="ld-title"></h1>
+            <p class="listing-detail__loc">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.6"/></svg>
+              <span id="ld-location-text"></span>
+            </p>
+
+            <div class="listing-detail__meta">
+              <span><span id="ld-rooms"></span></span>
+              <span><span id="ld-area"></span></span>
+              <span><span id="ld-floor"></span></span>
+            </div>
+
+            <div class="listing-detail__actions">
+              <button type="button" class="btn btn--accent" id="ld-fav" data-fav="">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.7-9.3C.8 7.7 2.6 4 6.3 4c2.1 0 3.7 1.2 4.7 2.7C12 5.2 13.6 4 15.7 4c3.7 0 5.5 3.7 4 7.2-2.2 4.7-9.7 9.3-9.7 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                <span>В избранное</span>
+              </button>
+            </div>
+
+            <div class="listing-detail__contact">
+              <h3>Связаться с продавцом</h3>
+              <p>Собственник объявления · обычно отвечает быстро</p>
+              <div class="listing-detail__contact-row">
+                <button type="button" class="btn btn--primary btn--sm" id="ld-phone">Показать телефон</button>
+                <span class="listing-detail__phone-number" id="ld-phone-number" hidden></span>
+                <button type="button" class="btn btn--ghost btn--sm" id="ld-message">Написать сообщение</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="listing-detail__description" data-reveal data-reveal-delay="2">
+          <h2>Описание</h2>
+          <p id="ld-description"></p>
+        </div>
+      </div>
+
+      <div class="wrap" id="listing-not-found" hidden>
+        <div class="empty-state">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>
+          <p>Объявление не найдено. Возможно, оно было удалено.</p>
+          <a href="index.html#listings" class="btn btn--ghost btn--sm" style="margin-top: 16px;">Смотреть все объявления</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow eyebrow--teal">Похожие</p>
+            <h2>Похожие объявления</h2>
+          </div>
+        </div>
+        <div class="listing-grid" id="ld-similar"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="brand">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none">
+                <path d="M3 34A17 17 0 0 1 37 34" stroke="#3fb3a1" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M8 34A12 12 0 0 1 32 34" stroke="#d9a441" stroke-width="4.5" stroke-linecap="round"/>
+                <path d="M13 34A7 7 0 0 1 27 34" stroke="#e1693f" stroke-width="4.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span>
+              <span class="brand__word">Spectrum</span>
+              <span class="brand__tag">недвижимость</span>
+            </span>
+          </a>
+          <p>Маркетплейс недвижимости в Казахстане. Квартиры, дома и коммерческие помещения — от собственников и агентств, в тенге.</p>
+        </div>
+
+        <div class="footer__col">
+          <h4>Покупателям</h4>
+          <ul>
+            <li><a href="index.html#listings">Купить квартиру</a></li>
+            <li><a href="index.html#listings">Купить дом</a></li>
+            <li><a href="cabinet.html">Избранное</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Продавцам</h4>
+          <ul>
+            <li><a href="cabinet.html?role=seller">Разместить объявление</a></li>
+            <li><a href="index.html#how">Как это работает</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h4>Города</h4>
+          <ul>
+            <li><a href="index.html#listings">Алматы</a></li>
+            <li><a href="index.html#listings">Астана</a></li>
+            <li><a href="index.html#listings">Шымкент</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; 2026 Spectrum. Цены указаны в тенге (₸). Казахстан.</span>
+        <span>hello@spectrum.kz</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span id="toast-text">Готово</span>
+  </div>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

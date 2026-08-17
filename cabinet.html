@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=1">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -95,6 +95,7 @@
             <div class="listing-grid" id="favorites-grid">
 
               <article class="card" data-city="almaty" data-deal="sale">
+                <a class="card__link" href="listing.html?id=listing-1" aria-label="Открыть объявление: 3-комнатная квартира, 92 м²"></a>
                 <div class="card__media">
                   <span class="card__tag">Новостройка</span>
                   <button type="button" class="card__fav is-active" aria-label="Убрать из избранного" data-fav="listing-1">
@@ -118,6 +119,7 @@
               </article>
 
               <article class="card" data-city="shymkent" data-deal="sale">
+                <a class="card__link" href="listing.html?id=listing-3" aria-label="Открыть объявление: Дом, 180 м²"></a>
                 <div class="card__media">
                   <span class="card__tag">Дом</span>
                   <button type="button" class="card__fav is-active" aria-label="Убрать из избранного" data-fav="listing-3">
@@ -141,6 +143,7 @@
               </article>
 
               <article class="card" data-city="karaganda" data-deal="rent">
+                <a class="card__link" href="listing.html?id=listing-5" aria-label="Открыть объявление: Квартира, 45 м²"></a>
                 <div class="card__media">
                   <span class="card__tag card__tag--rent">Аренда</span>
                   <button type="button" class="card__fav is-active" aria-label="Убрать из избранного" data-fav="listing-5">
@@ -299,7 +302,8 @@
 
             <div class="owned-list" id="owned-list">
 
-              <div class="owned-row" data-listing>
+              <div class="owned-row" data-listing data-listing-id="listing-1">
+                <a class="owned-row__link" href="listing.html?id=listing-1" aria-label="Открыть объявление: 3-комнатная квартира, 92 м², Алматы"></a>
                 <div class="owned-row__media">
                   <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=200&q=70" alt="3-комнатная квартира, Алматы">
                 </div>
@@ -319,7 +323,8 @@
                 </div>
               </div>
 
-              <div class="owned-row" data-listing>
+              <div class="owned-row" data-listing data-listing-id="listing-4">
+                <a class="owned-row__link" href="listing.html?id=listing-4" aria-label="Открыть объявление: 2-комнатная квартира, 68 м², Алматы"></a>
                 <div class="owned-row__media">
                   <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=200&q=70" alt="2-комнатная квартира, Алматы">
                 </div>
@@ -339,7 +344,8 @@
                 </div>
               </div>
 
-              <div class="owned-row" data-listing>
+              <div class="owned-row" data-listing data-listing-id="listing-6">
+                <a class="owned-row__link" href="listing.html?id=listing-6" aria-label="Открыть объявление: Таунхаус, 140 м², Астана"></a>
                 <div class="owned-row__media">
                   <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=200&q=70" alt="Таунхаус, Астана">
                 </div>
@@ -379,6 +385,6 @@
     <span id="toast-text">Готово</span>
   </div>
 
-  <script src="script.js?v=1"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
