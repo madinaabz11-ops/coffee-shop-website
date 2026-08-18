@@ -62,4 +62,75 @@
       });
     });
   }
+
+  // Commerce modal (booking / order -> WhatsApp handoff)
+  const WHATSAPP_NUMBER = "77780403156";
+  const MODAL_COPY = {
+    booking: { eyebrow: "Забронировать столик", title: "Оставьте контакты" },
+    order: { eyebrow: "Заказать кофе", title: "Что вам собрать?" },
+  };
+
+  const modal = document.getElementById("commerce-modal");
+  const modalForm = document.getElementById("commerce-form");
+
+  if (modal && modalForm) {
+    const modalEyebrow = document.getElementById("modal-eyebrow");
+    const modalTitle = document.getElementById("modal-title");
+    let lastFocused = null;
+
+    const openModal = (mode) => {
+      const copy = MODAL_COPY[mode] || MODAL_COPY.booking;
+      modal.dataset.mode = mode in MODAL_COPY ? mode : "booking";
+      modalEyebrow.textContent = copy.eyebrow;
+      modalTitle.textContent = copy.title;
+      lastFocused = document.activeElement;
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      const firstField = document.getElementById("cf-name");
+      if (firstField) firstField.focus();
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocused instanceof HTMLElement) lastFocused.focus();
+    };
+
+    document.querySelectorAll("[data-modal-open]").forEach((btn) => {
+      btn.addEventListener("click", () => openModal(btn.dataset.modalOpen));
+    });
+
+    modal.querySelectorAll("[data-modal-close]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+
+    modalForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const mode = modal.dataset.mode || "booking";
+      const name = modalForm.name.value.trim();
+      const phone = modalForm.phone.value.trim();
+      let message;
+
+      if (mode === "order") {
+        const order = modalForm.order.value.trim();
+        message = `Здравствуйте! Хочу заказать кофе с собой в ХВОЯ.\nИмя: ${name}\nТелефон: ${phone}\nЗаказ: ${order || "уточню по звонку"}`;
+      } else {
+        const date = modalForm.date.value || "уточню";
+        const time = modalForm.time.value || "уточню";
+        const guests = modalForm.guests.value || "2";
+        message = `Здравствуйте! Хочу забронировать столик в ХВОЯ.\nИмя: ${name}\nТелефон: ${phone}\nДата: ${date}\nВремя: ${time}\nГостей: ${guests}`;
+      }
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank", "noopener");
+      closeModal();
+      modalForm.reset();
+    });
+  }
 })();
