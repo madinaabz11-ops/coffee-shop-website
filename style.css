@@ -257,14 +257,18 @@ table { border-collapse: collapse; }
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 25px;
+  padding: 15px 26px;
   background: var(--rust);
-  border: 2px solid var(--ink);
   color: var(--ink);
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+  filter:
+    drop-shadow(1px 0 0 var(--ink-soft))
+    drop-shadow(-1px 0 0 var(--ink-soft))
+    drop-shadow(0 1px 0 var(--ink-soft))
+    drop-shadow(0 -1px 0 var(--ink-soft));
   transition: background 0.3s var(--ease), transform 0.3s var(--ease), color 0.3s var(--ease);
 }
 .btn__arrow { width: 18px; transition: transform 0.3s var(--ease); }
@@ -272,22 +276,20 @@ table { border-collapse: collapse; }
 .btn:hover .btn__arrow { transform: translateX(4px); }
 
 .text-link {
-  --cut: 10px;
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 23px;
-  border: 2px solid var(--ink);
+  padding: 13px 24px;
+  border: 1px solid var(--ink-soft);
   background: transparent;
-  color: var(--ink);
+  color: var(--ink-soft);
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
-  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
 }
-.text-link:hover { background: var(--ink); color: var(--bg); transform: translate(2px, -2px); }
+.text-link:hover { background: var(--ink-soft); border-color: var(--ink-soft); color: var(--bg); transform: translate(2px, -2px); }
 
 /* =========================================================
    HERO
