@@ -80,12 +80,21 @@
 
     const dateField = document.getElementById("cf-date");
     if (dateField) {
-      const toISODate = (d) => d.toISOString().slice(0, 10);
+      const toISODate = (d) =>
+        `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
       const today = new Date();
       const maxDate = new Date();
       maxDate.setDate(maxDate.getDate() + 90);
       dateField.min = toISODate(today);
       dateField.max = toISODate(maxDate);
+
+      const clampDate = () => {
+        if (!dateField.value) return;
+        if (dateField.value < dateField.min) dateField.value = dateField.min;
+        else if (dateField.value > dateField.max) dateField.value = dateField.max;
+      };
+      dateField.addEventListener("input", clampDate);
+      dateField.addEventListener("change", clampDate);
     }
 
     const openModal = (mode) => {
