@@ -78,6 +78,16 @@
     const modalTitle = document.getElementById("modal-title");
     let lastFocused = null;
 
+    const dateField = document.getElementById("cf-date");
+    if (dateField) {
+      const toISODate = (d) => d.toISOString().slice(0, 10);
+      const today = new Date();
+      const maxDate = new Date();
+      maxDate.setDate(maxDate.getDate() + 90);
+      dateField.min = toISODate(today);
+      dateField.max = toISODate(maxDate);
+    }
+
     const openModal = (mode) => {
       const copy = MODAL_COPY[mode] || MODAL_COPY.booking;
       modal.dataset.mode = mode in MODAL_COPY ? mode : "booking";

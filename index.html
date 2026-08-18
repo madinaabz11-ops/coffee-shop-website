@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 
@@ -439,13 +439,13 @@
 
         <div class="field">
           <label for="cf-phone">Телефон</label>
-          <input type="tel" id="cf-phone" name="phone" placeholder="+7 700 000-00-00" required>
+          <input type="tel" id="cf-phone" name="phone" placeholder="+7 700 000-00-00" value="+7 " required>
         </div>
 
         <div class="field-row" data-field-group="booking">
           <div class="field">
             <label for="cf-date">Дата</label>
-            <input type="date" id="cf-date" name="date">
+            <input type="date" id="cf-date" name="date" min="" max="">
           </div>
           <div class="field">
             <label for="cf-time">Время</label>
@@ -475,6 +475,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
