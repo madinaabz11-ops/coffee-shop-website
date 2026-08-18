@@ -782,28 +782,44 @@ section { padding: 88px 0; }
   gap: 18px;
 }
 
-.gallery__item { transition: transform 0.4s var(--ease); }
-.gallery__item:hover { transform: translateY(-6px); }
-
-.gallery__item picture { display: block; width: 100%; }
+.gallery__item picture { display: block; width: 100%; height: 100%; }
 
 .gallery__item img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
   filter: grayscale(55%) contrast(0.96) brightness(0.98);
-  transition: filter 0.5s var(--ease);
+  transition: filter 0.6s var(--ease), transform 0.6s var(--ease);
 }
-.gallery__item:hover img { filter: grayscale(0%) contrast(1) brightness(1); }
+.gallery__item:hover img {
+  filter: grayscale(0%) contrast(1) brightness(1);
+  transform: scale(1.07);
+}
 
 .gallery__item .art-block::before,
 .gallery__item .art-block::after { border-color: var(--sage); }
 
-.gallery__item--a { grid-column: span 7; }
-.gallery__item--b { grid-column: span 5; }
-.gallery__item--c { grid-column: span 5; }
-.gallery__item--d { grid-column: span 7; }
+.gallery__item--big { grid-column: 1 / -1; }
+.gallery__item--big img { aspect-ratio: 16 / 8; }
+
+.gallery__item--small { grid-column: span 6; }
+.gallery__item--small img { aspect-ratio: 1 / 1; }
+
+.gallery__item--wide { grid-column: 1 / -1; }
+.gallery__item--wide img { aspect-ratio: 21 / 8; }
+
+.gallery__item figcaption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 44px 22px 16px;
+  background: linear-gradient(0deg, rgba(23, 39, 32, 0.78) 0%, rgba(23, 39, 32, 0) 100%);
+  color: var(--paper);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.gallery__item:hover figcaption { opacity: 1; transform: translateY(0); }
 
 /* =========================================================
    VISIT
@@ -976,8 +992,9 @@ section { padding: 88px 0; }
 
   .hero__row { flex-direction: column; align-items: flex-start; gap: 20px; }
 
-  .gallery__item--a, .gallery__item--b,
-  .gallery__item--c, .gallery__item--d { grid-column: span 12; }
+  .gallery__item--small { grid-column: 1 / -1; }
+  .gallery__item--big img,
+  .gallery__item--wide img { aspect-ratio: 4 / 3; }
 
   .scroll-cue { display: none; }
 
