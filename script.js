@@ -62,23 +62,4 @@
       });
     });
   }
-
-  // Subtle parallax on hero contour lines
-  const contours = document.querySelector(".hero__contours");
-  if (contours && !reduceMotion) {
-    let ticking = false;
-    window.addEventListener(
-      "scroll",
-      () => {
-        if (ticking) return;
-        ticking = true;
-        requestAnimationFrame(() => {
-          const offset = window.scrollY * 0.08;
-          contours.style.transform = `translateY(${offset}px)`;
-          ticking = false;
-        });
-      },
-      { passive: true }
-    );
-  }
 })();
