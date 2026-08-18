@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
 
@@ -156,37 +156,47 @@
 
     <!-- TEAM -->
     <section id="team" class="team">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow" data-reveal>02 - Команда</p>
-          <h2 class="h2" data-reveal>Кто варит вам кофе</h2>
-        </div>
-
-        <div class="team__grid">
-          <div class="team__member" data-reveal>
-            <div class="team__portrait">
-              <span class="team__initial">Н</span>
-              <svg class="team__sprig" viewBox="0 0 40 20" fill="none" aria-hidden="true">
-                <path d="M20 19V3M20 7l-8 5M20 7l8 5M20 12l-6 4M20 12l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <h3>Настя</h3>
-            <p class="team__role">Обжарщица</p>
-            <p class="team__note">Приходит в пять утра - пока город ещё спит, а зерно уже пахнет корицей.</p>
+      <div class="wrap team__layout">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>02 - Команда</p>
+            <h2 class="h2" data-reveal>Кто варит вам кофе</h2>
           </div>
 
-          <div class="team__member" data-reveal data-reveal-delay="1">
-            <div class="team__portrait">
-              <span class="team__initial">Т</span>
-              <svg class="team__sprig" viewBox="0 0 40 20" fill="none" aria-hidden="true">
-                <path d="M20 19V3M20 7l-8 5M20 7l8 5M20 12l-6 4M20 12l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-              </svg>
+          <div class="team__grid">
+            <div class="team__member" data-reveal>
+              <div class="team__portrait">
+                <span class="team__initial">Н</span>
+                <svg class="team__sprig" viewBox="0 0 40 20" fill="none" aria-hidden="true">
+                  <path d="M20 19V3M20 7l-8 5M20 7l8 5M20 12l-6 4M20 12l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Настя</h3>
+              <p class="team__role">Обжарщица</p>
+              <p class="team__note">Приходит в пять утра - пока город ещё спит, а зерно уже пахнет корицей.</p>
             </div>
-            <h3>Тимур</h3>
-            <p class="team__role">Шеф-бариста</p>
-            <p class="team__note">Помнит заказ каждого постоянного гостя - и то, с каким сиропом он больше не хочет ошибаться.</p>
+
+            <div class="team__member" data-reveal data-reveal-delay="1">
+              <div class="team__portrait">
+                <span class="team__initial">Т</span>
+                <svg class="team__sprig" viewBox="0 0 40 20" fill="none" aria-hidden="true">
+                  <path d="M20 19V3M20 7l-8 5M20 7l8 5M20 12l-6 4M20 12l6 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Тимур</h3>
+              <p class="team__role">Шеф-бариста</p>
+              <p class="team__note">Помнит заказ каждого постоянного гостя - и то, с каким сиропом он больше не хочет ошибаться.</p>
+            </div>
           </div>
         </div>
+
+        <figure class="art-block team__photo" data-reveal data-reveal-delay="1">
+          <picture>
+            <source srcset="images/bookshelf.webp?v=2" type="image/webp">
+            <img src="images/bookshelf.jpg?v=2" alt="Полка с книгами в кофейне ХВОЯ" width="1000" height="750" loading="lazy" decoding="async">
+          </picture>
+          <figcaption>Место, где мы работаем</figcaption>
+        </figure>
       </div>
     </section>
 
