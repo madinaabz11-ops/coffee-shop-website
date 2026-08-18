@@ -253,26 +253,35 @@ table { border-collapse: collapse; }
    BUTTONS / LINKS
    ========================================================= */
 .btn {
-  --cut: 12px;
+  position: relative;
+  z-index: 0;
   display: inline-flex;
   align-items: center;
   gap: 12px;
   padding: 15px 26px;
-  background: var(--rust);
   color: var(--ink);
   font-weight: 600;
   font-size: 0.92rem;
   letter-spacing: 0.02em;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
-  filter:
-    drop-shadow(1px 0 0 var(--ink-soft))
-    drop-shadow(-1px 0 0 var(--ink-soft))
-    drop-shadow(0 1px 0 var(--ink-soft))
-    drop-shadow(0 -1px 0 var(--ink-soft));
-  transition: background 0.3s var(--ease), transform 0.3s var(--ease), color 0.3s var(--ease);
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.btn__shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: visible;
+}
+.btn__shape polygon {
+  fill: var(--rust);
+  stroke: var(--ink-soft);
+  stroke-width: 1.5;
+  transition: fill 0.3s var(--ease);
 }
 .btn__arrow { width: 18px; transition: transform 0.3s var(--ease); }
-.btn:hover { background: var(--rust-deep); color: var(--paper); transform: translate(2px, -2px); }
+.btn:hover { color: var(--paper); transform: translate(2px, -2px); }
+.btn:hover .btn__shape polygon { fill: var(--rust-deep); }
 .btn:hover .btn__arrow { transform: translateX(4px); }
 
 .text-link {
