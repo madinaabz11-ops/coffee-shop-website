@@ -800,13 +800,13 @@ section { padding: 88px 0; }
 .gallery__item .art-block::after { border-color: var(--sage); }
 
 .gallery__item--big { grid-column: 1 / -1; }
-.gallery__item--big img { aspect-ratio: 16 / 8; }
+.gallery__item--big img { aspect-ratio: 16 / 6.5; }
 
 .gallery__item--small { grid-column: span 6; }
-.gallery__item--small img { aspect-ratio: 1 / 1; }
+.gallery__item--small img { aspect-ratio: 6 / 5; }
 
 .gallery__item--wide { grid-column: 1 / -1; }
-.gallery__item--wide img { aspect-ratio: 21 / 8; }
+.gallery__item--wide img { aspect-ratio: 21 / 6.5; }
 
 .gallery__item figcaption {
   left: 0;
@@ -994,7 +994,7 @@ section { padding: 88px 0; }
 
   .gallery__item--small { grid-column: 1 / -1; }
   .gallery__item--big img,
-  .gallery__item--wide img { aspect-ratio: 4 / 3; }
+  .gallery__item--wide img { aspect-ratio: 3 / 2.2; }
 
   .scroll-cue { display: none; }
 
