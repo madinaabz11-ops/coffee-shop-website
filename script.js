@@ -64,7 +64,7 @@
   }
 
   // Commerce modal (booking / order -> WhatsApp handoff)
-  const WHATSAPP_NUMBER = "77780403156";
+  const WHATSAPP_NUMBER = "77083659156";
   const MODAL_COPY = {
     booking: { eyebrow: "Забронировать столик", title: "Оставьте контакты" },
     order: { eyebrow: "Заказать кофе", title: "Что вам собрать?" },
@@ -79,6 +79,7 @@
     let lastFocused = null;
 
     const dateField = document.getElementById("cf-date");
+    const timeField = document.getElementById("cf-time");
     if (dateField) {
       const toISODate = (d) =>
         `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -98,10 +99,14 @@
     }
 
     const openModal = (mode) => {
-      const copy = MODAL_COPY[mode] || MODAL_COPY.booking;
-      modal.dataset.mode = mode in MODAL_COPY ? mode : "booking";
+      const resolvedMode = mode in MODAL_COPY ? mode : "booking";
+      const copy = MODAL_COPY[resolvedMode];
+      modal.dataset.mode = resolvedMode;
       modalEyebrow.textContent = copy.eyebrow;
       modalTitle.textContent = copy.title;
+      const isBooking = resolvedMode === "booking";
+      if (dateField) dateField.required = isBooking;
+      if (timeField) timeField.required = isBooking;
       lastFocused = document.activeElement;
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
