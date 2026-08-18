@@ -973,7 +973,7 @@ section { padding: 88px 0; }
 /* =========================================================
    FORM FIELDS
    ========================================================= */
-.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; min-width: 0; }
 
 .field label {
   font-size: 0.76rem;
