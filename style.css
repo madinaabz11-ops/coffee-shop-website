@@ -11,6 +11,7 @@
   --ink-faint:   #674d3b;
   --line:        #d4c5b7;
   --line-soft:   #e3dacf;
+  --contour:     #9a9085;
   --rust:        #c69a5b;
   --rust-deep:   #8a6248;
   --moss:        #496b5d;
@@ -275,8 +276,8 @@ table { border-collapse: collapse; }
 }
 .btn__shape polygon {
   fill: var(--rust);
-  stroke: var(--ink-soft);
-  stroke-width: 1.5;
+  stroke: var(--contour);
+  stroke-width: 1;
   transition: fill 0.3s var(--ease);
 }
 .btn__arrow { width: 18px; transition: transform 0.3s var(--ease); }
@@ -290,7 +291,7 @@ table { border-collapse: collapse; }
   align-items: center;
   gap: 10px;
   padding: 13px 24px;
-  border: 1px solid var(--ink-soft);
+  border: 1px solid var(--contour);
   background: transparent;
   color: var(--ink-soft);
   font-weight: 600;
