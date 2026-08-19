@@ -239,6 +239,22 @@ table { border-collapse: collapse; }
 .nav a:hover::after,
 .nav a.is-active::after { transform: scaleX(1); }
 
+.nav__cta {
+  align-self: center;
+  padding: 9px 18px;
+  background: var(--rust);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.86rem;
+  white-space: nowrap;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.nav__cta:hover {
+  background: var(--rust-deep);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
 .menu-toggle { display: none; }
 
 .burger {
@@ -1156,6 +1172,13 @@ section { padding: 88px 0; }
     transition: transform 0.4s var(--ease);
   }
   .menu-toggle:checked ~ .nav { transform: translateX(0); }
+
+  .nav__cta {
+    align-self: stretch;
+    text-align: center;
+    margin-top: 4px;
+    padding: 14px 18px;
+  }
 
   .burger { display: flex; }
   .menu-toggle:checked ~ .burger span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }

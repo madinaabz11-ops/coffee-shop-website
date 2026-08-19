@@ -108,6 +108,7 @@
       if (dateField) dateField.required = isBooking;
       if (timeField) timeField.required = isBooking;
       lastFocused = document.activeElement;
+      if (menuToggle) menuToggle.checked = false;
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
