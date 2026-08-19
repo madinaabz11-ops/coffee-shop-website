@@ -158,4 +158,38 @@
       modalForm.reset();
     });
   }
+
+  // Map modal (pin badge -> map popup, no navigation away from the site)
+  const mapModal = document.getElementById("map-modal");
+  if (mapModal) {
+    const mapIframe = mapModal.querySelector("iframe");
+    let mapLastFocused = null;
+
+    const openMapModal = () => {
+      if (mapIframe && !mapIframe.src) mapIframe.src = mapIframe.dataset.src;
+      mapLastFocused = document.activeElement;
+      if (menuToggle) menuToggle.checked = false;
+      mapModal.classList.add("is-open");
+      mapModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      mapModal.querySelector(".modal__close").focus();
+    };
+
+    const closeMapModal = () => {
+      mapModal.classList.remove("is-open");
+      mapModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (mapLastFocused instanceof HTMLElement) mapLastFocused.focus();
+    };
+
+    document.querySelectorAll("[data-map-open]").forEach((btn) => {
+      btn.addEventListener("click", openMapModal);
+    });
+    mapModal.querySelectorAll("[data-map-close]").forEach((el) => {
+      el.addEventListener("click", closeMapModal);
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mapModal.classList.contains("is-open")) closeMapModal();
+    });
+  }
 })();

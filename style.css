@@ -1154,6 +1154,21 @@ a.social-links__item:hover { color: var(--rust-deep); transform: translateY(-2px
   text-align: center;
 }
 
+.modal__panel--map { max-width: 640px; padding: 40px 40px 0; }
+
+.modal__map {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  margin: 0 -40px;
+}
+.modal__map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
