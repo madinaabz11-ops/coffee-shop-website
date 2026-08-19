@@ -930,6 +930,12 @@ section { padding: 88px 0; }
 }
 .contact-list a:hover { border-color: var(--rust); color: var(--rust-deep); }
 
+a.contact-list__action {
+  color: var(--rust-deep);
+  border-bottom: 1px solid var(--contour);
+}
+a.contact-list__action:hover { border-color: var(--rust); }
+
 .social-links { display: flex; align-items: center; gap: 16px; }
 a.social-links__item {
   display: flex;
