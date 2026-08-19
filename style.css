@@ -930,6 +930,16 @@ section { padding: 88px 0; }
 }
 .contact-list a:hover { border-color: var(--rust); color: var(--rust-deep); }
 
+.social-links { display: flex; align-items: center; gap: 16px; }
+a.social-links__item {
+  display: flex;
+  border-bottom: none;
+  color: var(--ink-faint);
+  transition: color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.social-links__item svg { width: 22px; height: 22px; }
+a.social-links__item:hover { color: var(--rust-deep); transform: translateY(-2px); }
+
 .visit__cta { margin-top: 28px; }
 
 .visit__map { position: relative; aspect-ratio: 400 / 460; }
