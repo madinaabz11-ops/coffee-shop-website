@@ -163,6 +163,23 @@
   if (storiesTrack) {
     const ids = Object.keys(LISTINGS);
     storiesTrack.innerHTML = ids.map((id, i) => storyMarkup(id, LISTINGS[id], i + 1, ids.length)).join("");
+
+    const prevBtn = document.getElementById("stories-prev");
+    const nextBtn = document.getElementById("stories-next");
+    const step = () => (storiesTrack.querySelector(".story")?.getBoundingClientRect().width || 340) + 28;
+
+    if (prevBtn) prevBtn.addEventListener("click", () => storiesTrack.scrollBy({ left: -step(), behavior: reduceMotion ? "auto" : "smooth" }));
+    if (nextBtn) nextBtn.addEventListener("click", () => storiesTrack.scrollBy({ left: step(), behavior: reduceMotion ? "auto" : "smooth" }));
+
+    function updateStoriesArrows() {
+      if (!prevBtn || !nextBtn) return;
+      const max = storiesTrack.scrollWidth - storiesTrack.clientWidth;
+      prevBtn.disabled = storiesTrack.scrollLeft <= 2;
+      nextBtn.disabled = storiesTrack.scrollLeft >= max - 2;
+    }
+    storiesTrack.addEventListener("scroll", updateStoriesArrows, { passive: true });
+    window.addEventListener("resize", updateStoriesArrows);
+    updateStoriesArrows();
   }
 
   /* ---------------------------------------------------------

@@ -441,12 +441,30 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 28px;
   margin-top: 44px;
-  padding: 0 32px 12px;
+  padding-left: max(32px, calc((100vw - var(--wrap)) / 2 + 32px));
+  padding-right: 32px;
+  padding-bottom: 12px;
   overflow-x: auto;
   scroll-snap-type: x proximity;
+  scroll-padding-left: max(32px, calc((100vw - var(--wrap)) / 2 + 32px));
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 .stories__track::-webkit-scrollbar { display: none; }
+
+.stories__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.stories__nav { display: flex; gap: 10px; flex-shrink: 0; }
+.stories__arrow {
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  transition: border-color 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+.stories__arrow svg { width: 16px; height: 12px; }
+.stories__arrow:hover { border-color: var(--ink); }
+.stories__arrow:disabled { opacity: 0.3; cursor: default; }
+.stories__arrow:disabled:hover { border-color: var(--line); }
 
 .story { flex: 0 0 auto; width: 340px; scroll-snap-align: start; }
 .story__link { display: block; }
