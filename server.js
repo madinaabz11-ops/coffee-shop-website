@@ -39,12 +39,12 @@ http
 
     fs.readFile(filePath, (err, data) => {
       if (err) {
-        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
         res.end("404 Not Found");
         return;
       }
       const ext = path.extname(filePath);
-      res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream" });
+      res.writeHead(200, { "Content-Type": mime[ext] || "application/octet-stream", "Cache-Control": "no-store" });
       res.end(data);
     });
   })
