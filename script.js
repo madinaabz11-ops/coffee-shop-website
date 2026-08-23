@@ -182,7 +182,14 @@
   FEATURED_ROWS.forEach((row, i) => {
     const el = document.getElementById(`featured-row-${i + 1}`);
     if (!el) return;
-    el.innerHTML = row.map(({ id, size }) => cardMarkup(id, LISTINGS[id], size)).join("");
+    if (i === 0) {
+      const [big, ...rest] = row;
+      el.innerHTML =
+        cardMarkup(big.id, LISTINGS[big.id], big.size) +
+        `<div class="featured-grid__side">${rest.map(({ id, size }) => cardMarkup(id, LISTINGS[id], size)).join("")}</div>`;
+    } else {
+      el.innerHTML = row.map(({ id, size }) => cardMarkup(id, LISTINGS[id], size)).join("");
+    }
   });
 
   /* ---------------------------------------------------------

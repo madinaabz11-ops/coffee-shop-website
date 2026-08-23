@@ -419,8 +419,8 @@ h1, h2, h3, h4 {
    Featured masonry
    --------------------------------------------------------------- */
 .featured-grid { display: grid; gap: 28px; margin-bottom: 28px; }
-.featured-grid--a { grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; }
-.featured-grid--a .card--lg { grid-row: 1 / span 2; }
+.featured-grid--a { grid-template-columns: 2fr 1fr; align-items: start; }
+.featured-grid__side { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
 .featured-grid--a .card--sm { aspect-ratio: 16 / 11; }
 .featured-grid--b { grid-template-columns: repeat(3, 1fr); }
 .featured-grid--b .card--wide { grid-column: 1 / -1; }
@@ -741,8 +741,7 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px) {
-  .featured-grid--a { grid-template-columns: 1fr; grid-template-rows: none; }
-  .featured-grid--a .card--lg { grid-row: auto; }
+  .featured-grid--a { grid-template-columns: 1fr; }
   .featured-grid--a .card--lg .card__media { aspect-ratio: 4 / 3; }
   .featured-grid--b { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: repeat(2, 1fr); }
