@@ -4,6 +4,35 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------------------------------------------------------
+     Theme toggle (light / dark / follows system)
+     --------------------------------------------------------- */
+  const THEME_KEY = "spectrum_theme";
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const themeToggle = document.getElementById("theme-toggle");
+
+  function effectiveTheme() {
+    const stored = localStorage.getItem(THEME_KEY);
+    return stored === "dark" || stored === "light" ? stored : (systemDark.matches ? "dark" : "light");
+  }
+  function syncTheme() {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === "dark" || stored === "light") {
+      document.documentElement.setAttribute("data-theme", stored);
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+    if (themeToggle) themeToggle.dataset.mode = effectiveTheme();
+  }
+  syncTheme();
+  systemDark.addEventListener("change", syncTheme);
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      localStorage.setItem(THEME_KEY, effectiveTheme() === "dark" ? "light" : "dark");
+      syncTheme();
+    });
+  }
+
+  /* ---------------------------------------------------------
      Listings data (shared by home page, cabinet and detail page)
      --------------------------------------------------------- */
   const dealTypeLabels = { apartment: "Квартира", house: "Дом", townhouse: "Таунхаус", commercial: "Коммерческая" };
