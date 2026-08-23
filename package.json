@@ -4,9 +4,6 @@
   "private": true,
   "description": "Spectrum real estate marketplace - static site",
   "scripts": {
-    "start": "serve -l ${PORT:-3000} ."
-  },
-  "dependencies": {
-    "serve": "^14.2.1"
+    "start": "node server.js"
   }
 }
