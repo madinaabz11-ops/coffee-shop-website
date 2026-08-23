@@ -733,7 +733,7 @@ h1, h2, h3, h4 {
    Responsive
    --------------------------------------------------------------- */
 @media (max-width: 1080px) {
-  .search-panel { grid-template-columns: repeat(2, 1fr); }
+  .search-panel { grid-template-columns: repeat(2, 1fr); margin-top: 16px; }
   .search-panel__submit { grid-column: 1 / -1; height: 50px; }
   .ld-body { grid-template-columns: 1fr; gap: 40px; }
   .lifestyle__grid { grid-template-columns: 1fr; gap: 32px; }
@@ -759,6 +759,7 @@ h1, h2, h3, h4 {
     padding: 12px 32px 20px; box-shadow: var(--shadow-md);
   }
   .hero__pin { left: 16px; right: 16px; bottom: 16px; max-width: none; }
+  .search-panel { margin-top: 16px; }
   .cabinet__head { flex-direction: column; align-items: flex-start; }
   .profile-card { flex-direction: column; text-align: center; }
   .profile-card__meta { justify-content: center; }
@@ -771,7 +772,7 @@ h1, h2, h3, h4 {
 @media (max-width: 640px) {
   .hero { padding-top: 40px; }
   .hero__media { aspect-ratio: 4 / 5; max-height: none; }
-  .search-panel { grid-template-columns: 1fr; margin-top: -32px; padding: 22px; gap: 18px; }
+  .search-panel { grid-template-columns: 1fr; margin-top: 20px; padding: 22px; gap: 18px; }
   .search-panel__submit { height: 48px; }
   .featured, .lifestyle, .stories { padding-top: 80px; }
   .stats { padding: 64px 0; }
