@@ -630,6 +630,20 @@ h1, h2, h3, h4 {
 .ld-contact__phone { font-family: var(--font-serif); font-weight: 600; font-size: 18px; }
 
 /* ---------------------------------------------------------------
+   Auth (login / register)
+   --------------------------------------------------------------- */
+.auth { padding: 90px 0 110px; min-height: 56vh; display: flex; align-items: center; }
+.auth__wrap { width: 100%; }
+.auth-card { max-width: 440px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); padding: 40px; }
+.auth-card .role-switch { margin-bottom: 28px; }
+.auth-card__title { font-size: 26px; font-weight: 500; margin-bottom: 8px; }
+.auth-card__lede { color: var(--ink-soft); font-size: 14.5px; margin-bottom: 26px; }
+.auth-card form .form-field { margin-bottom: 16px; }
+.auth-card__note { margin-top: 20px; font-size: 12.5px; color: var(--ink-faint); text-align: center; }
+
+.btn--block { width: 100%; }
+
+/* ---------------------------------------------------------------
    Cabinet (dashboard - retains structure, re-themed)
    --------------------------------------------------------------- */
 .cabinet { padding: 48px 0 100px; }

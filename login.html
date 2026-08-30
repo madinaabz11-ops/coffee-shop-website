@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <script>(function(){var t=localStorage.getItem('spectrum_theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Объект - Spectrum</title>
-  <meta name="description" content="Подробности объекта недвижимости на Spectrum.">
+  <title>Вход - Spectrum</title>
+  <meta name="description" content="Вход и регистрация в личном кабинете Spectrum.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M6 20 L20 7 L34 20' fill='none' stroke='%2317140f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11 18 V33 H29 V18' fill='none' stroke='%2317140f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M20 33 V23 H24 V33' fill='none' stroke='%2317140f' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,85 +48,42 @@
           <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.5"/><path d="M12 2.5v2.3M12 19.2v2.3M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2.5 12h2.3M19.2 12h2.3M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 14.3A8.4 8.4 0 1 1 9.7 4a6.8 6.8 0 0 0 10.3 10.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
         </button>
-        <a href="cabinet.html" class="header__account" id="account-link">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 20c1.6-3.6 4.6-5.5 8-5.5s6.4 1.9 8 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.5"/></svg>
-          <span>Кабинет</span>
-        </a>
       </div>
     </div>
   </header>
 
   <main id="main">
-
-    <div class="wrap breadcrumb-row" data-reveal>
-      <a href="index.html#featured" class="text-link text-link--back">
-        <svg viewBox="0 0 20 10" aria-hidden="true"><path d="M0 5H19M19 5L14 1M19 5L14 9" stroke="currentColor" stroke-width="1.3"/></svg>
-        <span>Ко всем объектам</span>
-      </a>
-    </div>
-
-    <div id="listing-detail">
-      <figure class="ld-photo" id="ld-photo" data-reveal>
-        <img id="ld-image" src="" alt="">
-        <span class="ld-photo__tag" id="ld-tag"></span>
-      </figure>
-
-      <div class="wrap ld-head" data-reveal data-reveal-delay="1">
-        <div class="ld-head__main">
-          <p class="ld-price"><span id="ld-price"></span><span id="ld-price-suffix"></span></p>
-          <h1 class="ld-title" id="ld-title"></h1>
-          <p class="ld-subtitle" id="ld-subtitle"></p>
-          <p class="ld-summary" id="ld-summary"></p>
-        </div>
-        <button type="button" class="icon-btn icon-btn--lg" id="ld-fav" data-fav="" aria-label="В избранное">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.7-9.3C.8 7.7 2.6 4 6.3 4c2.1 0 3.7 1.2 4.7 2.7C12 5.2 13.6 4 15.7 4c3.7 0 5.5 3.7 4 7.2-2.2 4.7-9.7 9.3-9.7 9.3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </button>
-      </div>
-
-      <div class="wrap ld-body">
-        <div class="ld-about" data-reveal>
-          <h2>Об объекте</h2>
-          <p id="ld-description"></p>
-        </div>
-
-        <div class="ld-side" data-reveal data-reveal-delay="1">
-          <dl class="ld-specs">
-            <div><dt>Площадь</dt><dd id="ld-spec-area"></dd></div>
-            <div><dt>Комнаты</dt><dd id="ld-spec-rooms"></dd></div>
-            <div><dt>Этаж</dt><dd id="ld-spec-floor"></dd></div>
-            <div><dt>Тип</dt><dd id="ld-spec-type"></dd></div>
-            <div><dt>Город</dt><dd id="ld-spec-city"></dd></div>
-          </dl>
-
-          <div class="ld-contact">
-            <button type="button" class="cta-link" id="ld-phone">
-              <span>Связаться с продавцом</span>
-              <svg viewBox="0 0 20 10" aria-hidden="true"><path d="M0 5H19M19 5L14 1M19 5L14 9" stroke="currentColor" stroke-width="1.3"/></svg>
-            </button>
-            <span class="ld-contact__phone" id="ld-phone-number" hidden></span>
-            <button type="button" class="text-link" id="ld-message">Написать сообщение</button>
+    <section class="auth">
+      <div class="wrap auth__wrap">
+        <div class="auth-card" data-reveal>
+          <div class="role-switch" role="group" aria-label="Режим входа">
+            <button type="button" data-mode="login" class="is-active">Войти</button>
+            <button type="button" data-mode="register">Регистрация</button>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="wrap" id="listing-not-found" hidden>
-      <div class="empty-state">
-        <p>Объект не найден. Возможно, он был удалён.</p>
-        <a href="index.html#featured" class="cta-link" style="margin-top: 16px;">Смотреть все объекты</a>
-      </div>
-    </div>
+          <h1 class="auth-card__title" id="auth-title">С возвращением</h1>
+          <p class="auth-card__lede" id="auth-lede">Войдите, чтобы управлять объявлениями и избранным.</p>
 
-    <section class="section-alt">
-      <div class="wrap">
-        <div class="section-head" data-reveal>
-          <p class="eyebrow">Похожие</p>
-          <h2 class="section-title">Похожие объекты</h2>
+          <form id="auth-form" novalidate>
+            <div class="form-field form-field--full" id="auth-name-field" hidden>
+              <label for="auth-name">Имя</label>
+              <input type="text" id="auth-name" name="name" placeholder="Айгерим Ахметова">
+            </div>
+            <div class="form-field form-field--full">
+              <label for="auth-email">Email</label>
+              <input type="email" id="auth-email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-field form-field--full">
+              <label for="auth-password">Пароль</label>
+              <input type="password" id="auth-password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required>
+            </div>
+            <button type="submit" class="btn btn--accent btn--block" id="auth-submit">Войти</button>
+          </form>
+
+          <p class="auth-card__note">Демо-версия &mdash; вход выполняется с любыми данными.</p>
         </div>
-        <div class="card-grid" id="ld-similar"></div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer-min">

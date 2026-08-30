@@ -389,11 +389,64 @@
   }
 
   /* ---------------------------------------------------------
+     Auth (demo only - no real backend)
+     --------------------------------------------------------- */
+  const AUTH_KEY = "spectrum_authed";
+  function isAuthed() { return localStorage.getItem(AUTH_KEY) !== "0"; }
+
+  const accountLink = document.getElementById("account-link");
+  if (accountLink) {
+    if (isAuthed()) {
+      accountLink.href = "cabinet.html";
+      accountLink.querySelector("span").textContent = "Кабинет";
+    } else {
+      accountLink.href = "login.html";
+      accountLink.querySelector("span").textContent = "Войти";
+    }
+  }
+
+  // Guard the cabinet page itself for anyone who navigates there directly.
+  if (document.getElementById("panel-buyer") && !isAuthed()) {
+    window.location.href = "login.html";
+  }
+
+  const authForm = document.getElementById("auth-form");
+  if (authForm) {
+    const modeButtons = document.querySelectorAll(".auth-card .role-switch button");
+    const nameField = document.getElementById("auth-name-field");
+    const title = document.getElementById("auth-title");
+    const lede = document.getElementById("auth-lede");
+    const submitBtn = document.getElementById("auth-submit");
+
+    modeButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        modeButtons.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        const isRegister = btn.dataset.mode === "register";
+        nameField.hidden = !isRegister;
+        title.textContent = isRegister ? "Создать аккаунт" : "С возвращением";
+        lede.textContent = isRegister
+          ? "Зарегистрируйтесь, чтобы покупать, продавать и сохранять объекты."
+          : "Войдите, чтобы управлять объявлениями и избранным.";
+        submitBtn.textContent = isRegister ? "Зарегистрироваться" : "Войти";
+      });
+    });
+
+    authForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      localStorage.setItem(AUTH_KEY, "1");
+      showToast("Добро пожаловать!");
+      setTimeout(() => { window.location.href = "cabinet.html"; }, 600);
+    });
+  }
+
+  /* ---------------------------------------------------------
      Cabinet: log out
      --------------------------------------------------------- */
   const logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
+      localStorage.setItem(AUTH_KEY, "0");
       showToast("Вы вышли из аккаунта");
       setTimeout(() => { window.location.href = "index.html"; }, 700);
     });
@@ -402,7 +455,7 @@
   /* ---------------------------------------------------------
      Cabinet: buyer / seller role switch
      --------------------------------------------------------- */
-  const roleSwitch = document.querySelector(".role-switch");
+  const roleSwitch = document.getElementById("role-switch");
   if (roleSwitch) {
     const roleTag = document.getElementById("role-tag");
     const panelBuyer = document.getElementById("panel-buyer");
