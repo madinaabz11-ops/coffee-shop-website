@@ -769,6 +769,11 @@ h1, h2, h3, h4 {
   .form-actions { flex-direction: column-reverse; align-items: stretch; }
 }
 
+@media (max-width: 480px) {
+  .header__account span { display: none; }
+  .header__actions { gap: 10px; }
+}
+
 @media (max-width: 640px) {
   .hero { padding-top: 40px; }
   .hero__media { aspect-ratio: 4 / 5; max-height: none; }

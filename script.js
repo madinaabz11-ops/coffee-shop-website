@@ -389,6 +389,17 @@
   }
 
   /* ---------------------------------------------------------
+     Cabinet: log out
+     --------------------------------------------------------- */
+  const logoutBtn = document.getElementById("logout-btn");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      showToast("Вы вышли из аккаунта");
+      setTimeout(() => { window.location.href = "index.html"; }, 700);
+    });
+  }
+
+  /* ---------------------------------------------------------
      Cabinet: buyer / seller role switch
      --------------------------------------------------------- */
   const roleSwitch = document.querySelector(".role-switch");
