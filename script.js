@@ -83,19 +83,11 @@
     if (dateField) {
       const toISODate = (d) =>
         `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-      const months = [
-        "января", "февраля", "марта", "апреля", "мая", "июня",
-        "июля", "августа", "сентября", "октября", "ноября", "декабря",
-      ];
       const today = new Date();
-      for (let i = 0; i < 90; i++) {
-        const d = new Date(today);
-        d.setDate(d.getDate() + i);
-        const option = document.createElement("option");
-        option.value = toISODate(d);
-        option.textContent = `${d.getDate()} ${months[d.getMonth()]}${i === 0 ? " (сегодня)" : ""}`;
-        dateField.appendChild(option);
-      }
+      const maxDate = new Date(today);
+      maxDate.setDate(maxDate.getDate() + 89);
+      dateField.min = toISODate(today);
+      dateField.max = toISODate(maxDate);
     }
 
     const openModal = (mode) => {
