@@ -78,6 +78,27 @@
     const modalTitle = document.getElementById("modal-title");
     let lastFocused = null;
 
+    const phoneField = document.getElementById("cf-phone");
+    if (phoneField) {
+      const formatPhone = (raw) => {
+        let digits = raw.replace(/\D/g, "");
+        if (digits.startsWith("7") || digits.startsWith("8")) digits = digits.slice(1);
+        digits = digits.slice(0, 10);
+        let out = "+7";
+        if (digits.length > 0) out += " " + digits.slice(0, 3);
+        if (digits.length > 3) out += " " + digits.slice(3, 6);
+        if (digits.length > 6) out += "-" + digits.slice(6, 8);
+        if (digits.length > 8) out += "-" + digits.slice(8, 10);
+        return out;
+      };
+      phoneField.addEventListener("input", () => {
+        phoneField.value = formatPhone(phoneField.value);
+      });
+      phoneField.addEventListener("focus", () => {
+        if (!phoneField.value) phoneField.value = "+7 ";
+      });
+    }
+
     const dateField = document.getElementById("cf-date");
     const timeField = document.getElementById("cf-time");
     if (dateField) {
