@@ -750,6 +750,11 @@ section { padding: 88px 0; }
   padding-left: 10px;
 }
 
+.menu-list li.menu-list__filler:hover {
+  background: none;
+  padding-left: 4px;
+}
+
 .menu-list__name {
   flex-shrink: 0;
   font-size: 1.05rem;
