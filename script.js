@@ -134,6 +134,7 @@
       modal.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
       if (lastFocused instanceof HTMLElement) lastFocused.focus();
+      modalForm.reset();
     };
 
     document.querySelectorAll("[data-modal-open]").forEach((btn) => {
@@ -168,7 +169,6 @@
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
       window.open(url, "_blank", "noopener");
       closeModal();
-      modalForm.reset();
     });
   }
 
